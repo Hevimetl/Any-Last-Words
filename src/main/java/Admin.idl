@@ -1,0 +1,73 @@
+// Admin.idl
+#include "Common.idl"
+
+module AdminService {
+    interface Admin {
+        // User CRUD+Search
+        void createUser(
+            in string adminToken,
+            in string username,
+            in string password,
+            in CommonTypes::UserRole role
+        ) raises (
+            CommonTypes::AdminPrivilegeRequiredException,
+            CommonTypes::UserAlreadyExistsException,
+            CommonTypes::AuthenticationException
+        );
+
+        CommonTypes::UserInfo getUser(
+            in string adminToken,
+            in string username
+        ) raises (
+            CommonTypes::AdminPrivilegeRequiredException,
+            CommonTypes::UserNotFoundException
+        );
+
+        CommonTypes::UserInfoList getAllUsers(
+            in string adminToken
+        ) raises (
+            CommonTypes::AdminPrivilegeRequiredException
+        );
+
+        void updateUser(
+            in string adminToken,
+            in string currentUsername,
+            in string newUsername,
+            in string newPassword
+        ) raises (
+            CommonTypes::AdminPrivilegeRequiredException,
+            CommonTypes::UserNotFoundException,
+            CommonTypes::UserAlreadyExistsException
+        );
+
+        void deleteUser(
+            in string adminToken,
+            in string username
+        ) raises (
+            CommonTypes::AdminPrivilegeRequiredException,
+            CommonTypes::UserNotFoundException,
+            CommonTypes::OperationNotAllowedException
+        );
+
+        CommonTypes::StringList searchUsers(
+            in string adminToken,
+            in string searchQuery
+        ) raises (CommonTypes::AdminPrivilegeRequiredException);
+
+        // Time Configuration
+        CommonTypes::Settings getTimeSettings(in string adminToken)
+            raises (CommonTypes::AdminPrivilegeRequiredException);
+
+        void updateTimeSettings(
+            in string adminToken,
+            in CommonTypes::Settings newSettings
+        ) raises (
+            CommonTypes::AdminPrivilegeRequiredException,
+            CommonTypes::InvalidTimeSettingsException
+        );
+
+        // Game Monitoring
+        CommonTypes::StringList getAllActiveGames(in string adminToken)
+            raises (CommonTypes::AdminPrivilegeRequiredException);
+    };
+};

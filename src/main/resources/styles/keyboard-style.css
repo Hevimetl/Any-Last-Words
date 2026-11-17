@@ -1,0 +1,63 @@
+.keyboard-container {
+    -fx-background-color: transparent;
+    -fx-spacing: 12px;
+    -fx-padding: 10px;
+    -fx-alignment: center;
+}
+
+@font-face {
+  font-family: "Yoster Island";
+   src: url("/fonts/yoster.ttf");
+  }
+
+
+/* Keyboard rows */
+.keyboard-row {
+    -fx-alignment: center;
+    -fx-spacing: 6px; /* Horizontal space between keys */
+}
+
+/* Top row specific styling */
+.top-row {
+    -fx-padding: 0 0 0 10px; /* Left padding for offset */
+}
+
+/* Middle row specific styling */
+.mid-row {
+    -fx-padding: 0 0 0 25px;
+}
+
+/* Bottom row specific styling */
+.bottom-row {
+    -fx-padding: 0 0 0 40px;
+}
+
+/* Key button styling */
+.pixel-key {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: white;
+    -fx-font-family: 'Yoster Island' , 'Courier New';
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+    -fx-pref-width: 45px;
+    -fx-pref-height: 45px;
+    -fx-effect: dropshadow(one-pass-box, black, 2, 0.0, 1, 1);
+}
+
+.pixel-key:pressed {
+    -fx-background-color: #5a5a5a;
+    -fx-translate-y: 2px;
+    -fx-effect: dropshadow(one-pass-box, black, 1, 0.0, 1, 1);
+}
+
+
+.special-key {
+    -fx-background-color: #4a2a00;
+    -fx-pref-width: 67.5px;
+}
+
+.special-key:pressed {
+    -fx-background-color: #6a4a00;
+}

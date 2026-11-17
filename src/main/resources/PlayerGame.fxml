@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="910" prefWidth="1280.0" styleClass="keyboard-container" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="910.0" prefWidth="1280.0" style="-fx-background-color: black;" />
+      <ImageView fx:id="background" fitHeight="910.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@images/tester1.png" />
+         </image></ImageView>
+      <ImageView fx:id="doorPhase" fitHeight="910.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@images/Door_Phase5.gif" />
+         </image></ImageView>
+      <ImageView fx:id="player1_Char" fitHeight="217.0" fitWidth="228.0" layoutX="280.0" layoutY="670.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@char_images/Omori_Animation.gif" />
+         </image>
+      </ImageView>
+      <Pane fx:id="player2_Panel" layoutX="90.0" layoutY="50.0" prefHeight="230.0" prefWidth="182.0">
+         <children>
+            <ImageView fx:id="player2_Char" fitHeight="240.0" fitWidth="221.0" layoutX="-19.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@char_images/Goth_Animation.gif" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player2_Frame" fitHeight="229.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Char_Frame.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="player2_Name" layoutX="12.0" layoutY="175.0" prefHeight="17.0" prefWidth="159.0" text="Player 2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="player2_Health" fitHeight="35.0" fitWidth="166.0" layoutX="6.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/HealthBar_Phase5.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="player4_Panel" layoutX="90.0" layoutY="345.0" prefHeight="230.0" prefWidth="182.0">
+         <children>
+            <ImageView fx:id="player4_Char" fitHeight="240.0" fitWidth="221.0" layoutX="-19.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@char_images/Goth_Animation.gif" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player4_Frame" fitHeight="229.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Char_Frame.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="player4_Name" layoutX="12.0" layoutY="173.0" prefHeight="17.0" prefWidth="159.0" text="Player 4">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="player4_Health" fitHeight="35.0" fitWidth="166.0" layoutX="6.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/HealthBar_Phase5.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="player3_Panel" layoutX="1010.0" layoutY="50.0" prefHeight="230.0" prefWidth="182.0">
+         <children>
+            <ImageView fx:id="player3_Char" fitHeight="240.0" fitWidth="221.0" layoutX="-19.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@char_images/Goth_Animation.gif" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player3_Frame" fitHeight="229.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Char_Frame.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="player3_Name" layoutX="12.0" layoutY="174.0" prefHeight="17.0" prefWidth="159.0" text="Player 3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="player3_Health" fitHeight="35.0" fitWidth="166.0" layoutX="8.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/HealthBar_Phase5.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="player5_Panel" layoutX="1010.0" layoutY="345.0" prefHeight="230.0" prefWidth="182.0">
+         <children>
+            <ImageView fx:id="player5_Char" fitHeight="240.0" fitWidth="221.0" layoutX="-19.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@char_images/Goth_Animation.gif" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="player5_Frame" fitHeight="229.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Char_Frame.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="Player5_Name" layoutX="12.0" layoutY="173.0" prefHeight="17.0" prefWidth="159.0" text="Player5">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="player5_Health" fitHeight="35.0" fitWidth="166.0" layoutX="7.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/HealthBar_Phase5.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <HBox fx:id="hiddenWord" layoutX="195.2" layoutY="586.0" opacity="0.74" prefHeight="85.0" prefWidth="856.0" style="-fx-border-color: WHITE;" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="229.0" AnchorPane.topAnchor="583.0" />
+      <Label fx:id="roundTimerLabel" layoutX="575.0" layoutY="2.0" prefHeight="50.0" prefWidth="127.0" text="00:00" textFill="#faff38">
+         <font>
+            <Font name="Yoster Island Regular" size="40.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="player1_Health" fitHeight="35.0" fitWidth="166.0" layoutX="305.0" layoutY="867.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/HealthBar_Phase5.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="questionerCreep" fitHeight="910.0" fitWidth="1280.0" opacity="0.69" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@images/QuestionerCreep.gif" />
+         </image>
+      </ImageView>
+      <VBox fx:id="keyboardVBox" layoutX="584.0" layoutY="679.0" prefHeight="214.0" prefWidth="547.0" style="-fx-border-color: white;">
+         <children>
+            <HBox fx:id="topHBox" prefHeight="92.0" prefWidth="712.0" />
+            <HBox fx:id="midHBox" prefHeight="92.0" prefWidth="712.0" />
+            <HBox fx:id="bottomHBox" prefHeight="90.0" prefWidth="529.0" />
+         </children>
+      </VBox>
+      <ImageView fx:id="questionerJumpscare" fitHeight="910.0" fitWidth="1280.0" layoutX="291.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@images/questionerJumpscare.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="staticGIF" disable="true" fitHeight="910.0" fitWidth="1280.0" layoutY="-3.0" opacity="0.03" pickOnBounds="true">
+         <image>
+            <Image url="@images/Background_Static.gif" />
+         </image>
+      </ImageView>
+      <Pane fx:id="roundResult" prefHeight="910.0" prefWidth="1280.0" style="-fx-background-color: BLACK;" visible="false">
+         <children>
+            <ImageView fx:id="roundWinner" disable="true" fitHeight="150.0" fitWidth="500.0" layoutX="390.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Winner!.gif" />
+               </image>
+            </ImageView>
+            <Label fx:id="theWordIs" alignment="CENTER" disable="true" layoutX="9.0" layoutY="517.0" prefHeight="70.0" prefWidth="1261.0" text="The word is: word!" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Yoster Island Regular" size="40.0" />
+               </font>
+            </Label>
+            <Label fx:id="roundWinnerName" alignment="CENTER" disable="true" layoutX="14.0" layoutY="245.0" prefHeight="70.0" prefWidth="1250.0" text="Game Winner: Lola" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Yoster Island Regular" size="40.0" />
+               </font>
+            </Label>
+            <Label fx:id="roundTimerResult" layoutX="622.0" layoutY="113.0" prefHeight="97.0" prefWidth="52.0" text="0" textFill="#faff38">
+               <font>
+                  <Font name="Yoster Island Regular" size="65.0" />
+               </font>
+            </Label>
+            <Label fx:id="round" layoutX="50.0" layoutY="50.0" text="ROUND 1" textFill="WHITE">
+               <font>
+                  <Font name="Yoster Island Regular" size="45.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="gameEnd" prefHeight="910.0" prefWidth="1280.0" style="-fx-background-color: black;" visible="false">
+         <children>
+            <ImageView fx:id="confetti" fitHeight="910.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/Confetti.gif" />
+               </image></ImageView>
+            <ImageView fx:id="gameWinner" fitHeight="350.0" fitWidth="700.0" layoutX="308.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@images/GameWinner!.gif" />
+               </image>
+            </ImageView>
+            <Label fx:id="gameWinnerName" disable="true" layoutX="380.0" layoutY="171.0" prefHeight="75.0" prefWidth="655.0" text="Game Winner: Lola" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="Yoster Island Regular" size="55.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="damageLabel" opacity="0.09" prefHeight="910.0" prefWidth="1280.0" style="-fx-background-color: RED;" visible="false" />
+   </children>
+</AnchorPane>

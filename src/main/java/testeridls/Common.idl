@@ -1,0 +1,90 @@
+// Common.idl
+module Common {
+    typedef sequence<string> StringList;
+
+    enum UserRole {
+        PLAYER,
+        ADMIN
+    };
+
+    enum GameState {
+        WAITING_PLAYERS,
+        IN_PROGRESS,
+        COMPLETED
+    };
+
+    struct AuthResult {
+        string token;
+        string username;
+        UserRole role;
+        long long expirationTime;
+    };
+
+    struct GameSettings {
+        long waitingTimeSec;    // Default 10
+        long roundDurationSec; // Default 30
+    };
+
+    struct PlayerStats {
+        string username;
+        long totalWins;
+        long totalLosses;
+        long currentScore;
+    };
+
+    struct RoundResult {
+        string winnerUsername;
+        long roundDuration;
+        string guessedWord;
+    };
+
+    typedef sequence<PlayerStats> Leaderboard;
+    typedef sequence<RoundResult> RoundResults;
+
+    // Exceptions
+    exception AuthenticationException {
+        string message;
+    };
+    exception GameFullException {
+        string message;
+    };
+    exception GameNotFoundException {
+        string message;
+    };
+    exception WaitingTimeExpiredException {
+        string message;
+    };
+    exception InvalidGuessException {
+        string message;
+    };
+    exception RoundTimeoutException {
+        string message;
+    };
+    exception LetterAlreadyGuessedException {
+        string message;
+    };
+    exception GuessLimitReachedException {
+        string message;
+    };
+    exception AdminPrivilegeRequiredException {
+        string message;
+    };
+
+    // Callback interface
+    interface GameClientCallback {
+        void updateGameState(
+            in string gameId,
+            in long currentRound,
+            in string maskedWord,
+            in long remainingAttempts,
+            in StringList usedLetters,
+            in long timeRemaining
+        );
+
+        void notifyGameEvent(
+            in string gameId,
+            in string eventType,  // "STARTED", "ENDED", "ROUND_STARTED", "ROUND_ENDED"
+            in string eventMessage
+        );
+    };
+};

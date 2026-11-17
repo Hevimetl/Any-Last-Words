@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="910" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="918.0" fitWidth="1469.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/User_Manage.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="userButton" layoutX="34.0" layoutY="140.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="141.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="28.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/UserAdmin_Button.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="settingsButton" layoutX="198.0" layoutY="140.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="149.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="155.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/SettingsAdmin_Button.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="manageButton" layoutX="372.0" layoutY="139.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="144.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="116.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/ManageAdmin_Button.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <TextField fx:id="passwordField" layoutX="605.0" layoutY="528.0" prefHeight="30.0" prefWidth="260.0" style="-fx-background-color: transparent; -fx-text-fill: white;" />
+      <TextField fx:id="usernameField" layoutX="605.0" layoutY="415.0" prefHeight="39.0" prefWidth="262.0" style="-fx-background-color: transparent; -fx-text-fill: white;" />
+      <Button fx:id="deleteButton" layoutX="211.0" layoutY="675.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="169.0" style="-fx-background-color: trans;">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Delete_.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="updateButton" layoutX="918.0" layoutY="679.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="143.0" style="-fx-background-color: trans;">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="128.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Update_Button.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="backButton" layoutX="222.0" layoutY="362.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="58.0" style="-fx-background-color: trans;">
+         <graphic>
+            <ImageView fitHeight="34.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Return_Base.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

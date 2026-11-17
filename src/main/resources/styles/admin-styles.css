@@ -1,0 +1,29 @@
+.user-card {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 10;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 10;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);
+}
+
+.user-card:hover {
+    -fx-background-color: #e9ecef;
+}
+
+.user-info {
+    -fx-font-family: 'Segoe UI';
+    -fx-font-size: 14px;
+    -fx-text-fill: #212529;
+}
+
+.details-button {
+    -fx-background-color: #00008b;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-padding: 8 15;
+}
+
+.details-button:hover {
+    -fx-background-color: #00006f;
+}

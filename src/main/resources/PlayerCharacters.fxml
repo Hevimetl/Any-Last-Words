@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="910" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="910.0" fitWidth="1280.0" layoutX="-3.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@images/CharSelectionBG.png" />
+         </image></ImageView>
+      <Button fx:id="bangsButton" layoutX="80.0" layoutY="200.0" mnemonicParsing="false" prefHeight="158.0" prefWidth="178.0" style="-fx-background-color: black;">
+         <graphic>
+            <ImageView fitHeight="210.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@char_images/Bangs_Animation.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="gothButton" layoutX="375.0" layoutY="200.0" mnemonicParsing="false" prefHeight="210.0" prefWidth="210.0" style="-fx-background-color: black;">
+         <graphic>
+            <ImageView fitHeight="210.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@char_images/Goth_Animation.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="omoriButton" layoutX="675.0" layoutY="200.0" mnemonicParsing="false" style="-fx-background-color: black;">
+         <graphic>
+            <ImageView fitHeight="210.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@char_images/Omori_Animation.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="smirkButton" layoutX="970.0" layoutY="200.0" mnemonicParsing="false" style="-fx-background-color: black;">
+         <graphic>
+            <ImageView fitHeight="210.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@char_images/Smirk_Animation.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="ruggedButton" layoutX="80.0" layoutY="480.0" mnemonicParsing="false" prefHeight="158.0" prefWidth="178.0" style="-fx-background-color: black;">
+         <graphic>
+            <ImageView fitHeight="210.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@char_images/Rugged_Animation.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="steveButton" layoutX="375.0" layoutY="480.0" mnemonicParsing="false" prefHeight="210.0" prefWidth="210.0" style="-fx-background-color: black;">
+         <graphic>
+            <ImageView fitHeight="210.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@char_images/Steve_Animation.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="amogusButton" layoutX="675.0" layoutY="480.0" mnemonicParsing="false" style="-fx-background-color: black;">
+         <graphic>
+            <ImageView fitHeight="210.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@char_images/Amogus_Animation.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="makilButton" layoutX="970.0" layoutY="480.0" mnemonicParsing="false" style="-fx-background-color: black;">
+         <graphic>
+            <ImageView fitHeight="210.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@char_images/Makiler.gif" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="returnButton" layoutX="26.0" layoutY="27.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="90.0" style="-fx-background-color: ffffff0;">
+         <graphic>
+            <ImageView fx:id="returnImage" fitHeight="60.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Return_Base.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor></Button>
+   </children>
+</AnchorPane>

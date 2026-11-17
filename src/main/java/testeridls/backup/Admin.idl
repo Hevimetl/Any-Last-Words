@@ -1,0 +1,22 @@
+    // admin.idl
+    #include "Common.idl"
+
+    module AdminService {
+
+        interface Admin {
+            boolean addUser(in string token, in string username, in string password);
+            //CommonTypes::topUsers getUsers(in string token);
+            void updateUser(in string token, in string userId, in CommonTypes::User newInfo);
+            void deleteUser(in string token, in string userId);
+            boolean deleteUser(in string username);
+            CommonTypes::StringList searchPlayers(in string keyword);
+        };
+
+        interface Settings {
+            long getWaitingTime();
+            long getRoundDuration();
+            void updateWaitingTime(in string token, in long newWaitingTime);
+            void updateGameRoundDuration(in string token, in long newDuration);
+        };
+
+    };

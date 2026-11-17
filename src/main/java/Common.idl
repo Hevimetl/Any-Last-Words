@@ -1,0 +1,143 @@
+#ifndef COMMON_IDL
+#define COMMON_IDL
+#include "Callback.idl"
+
+module CommonTypes {
+    // Basic Types
+    typedef sequence<string> StringList;
+
+    // Enums
+    enum UserRole {
+        ADMIN,
+        PLAYER
+    };
+
+    // Data Structures
+    struct Settings {
+        long waitingTime;  // Player join wait (seconds)
+        long roundTime;    // Round duration (seconds)
+    };
+
+    struct AuthResult {
+        string token;
+        string userName;
+        UserRole role;
+        long long expirationTime;
+    };
+
+    struct UserInfo {
+        string userId;
+        string username;
+        string password;
+        long winCount;
+        UserRole role;
+    };
+
+    struct PlayerGameState {
+        string userName;
+        long remainingAttempts;
+        string selectedCharacter;
+        StringList guessedLetters;
+        long roundWins;
+        boolean isReady;
+        boolean isDisconnected;
+    };
+
+    typedef sequence<PlayerGameState> PlayerList;
+
+    struct GameInfo {
+        boolean gameState;
+        string gameId;
+        string hostName;
+        long wordLength;
+        long waitingTime;
+        long roundTime;
+        PlayerList players;
+    };
+
+    typedef sequence<GameInfo> GameList;
+    typedef sequence<UserInfo> UserInfoList;
+
+    // Exceptions
+    exception AuthenticationException {
+        string errorMessage;
+    };
+
+    exception AdminPrivilegeRequiredException {
+        string errorMessage;
+    };
+
+    exception InvalidTimeSettingsException {
+        string errorMessage;
+        long minWaitTime;
+        long maxRoundTime;
+    };
+
+    exception UserAlreadyExistsException {
+        string errorMessage;
+    };
+
+    exception UserNotFoundException {
+        string errorMessage;
+    };
+
+    exception UserDoesNotExistException {
+        string errorMessage;
+    };
+
+    exception InvalidCredentialsException {
+        string errorMessage;
+    };
+
+    exception UserAlreadyLoggedInException {
+        string errorMessage;
+    };
+
+    exception NoPlayersFoundException {
+        string errorMessage;
+    };
+
+    exception InvalidGuessException {
+        string errorMessage;
+    };
+
+    exception LetterAlreadyGuessedException {
+        string errorMessage;
+    };
+
+    exception GuessLimitReachedException {
+        string errorMessage;
+    };
+
+    exception GameNotFoundException {
+        string errorMessage;
+    };
+
+    exception InvalidSessionException {
+        string errorMessage;
+    };
+
+    exception OperationNotAllowedException {
+        string errorMessage;
+    };
+
+    // Interfaces
+    interface Login {
+        AuthResult authenticate(
+            in string userName,
+            in string password
+        ) raises (
+            InvalidCredentialsException,
+            UserDoesNotExistException,
+            UserAlreadyLoggedInException
+        );
+
+        void logoutAccount(in string token);
+        string isLoggedIn(in string token);
+        void registerCallback(in string username, in GameNotifications::GameCallback callback);
+        void unregisterCallback(in string username);
+        void forceLogout(in string username) raises (UserNotFoundException, OperationNotAllowedException);
+    };
+};
+
+#endif // COMMON_IDL

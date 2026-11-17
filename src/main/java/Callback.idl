@@ -1,0 +1,12 @@
+#ifndef CALLBACK_IDL
+#define CALLBACK_IDL
+
+module GameNotifications {
+    interface GameCallback {
+        void onRoundEnd(in string gameId, in string winnerName);
+        void onGameEnd(in string gameId, in string winnerName);
+        void notifyReLogin(in string username);
+    };
+};
+
+#endif // CALLBACK_IDL

@@ -1,0 +1,39 @@
+// AdminService.idl
+#include "Common.idl"
+
+module AdminService {
+    interface AdminService {
+        // User management
+        void createUser(
+            in string adminToken,
+            in string username,
+            in string password,
+            in Common::UserRole role
+        ) raises (
+            Common::AdminPrivilegeRequiredException,
+            Common::AuthenticationException
+        );
+        
+        void deleteUser(in string adminToken, in string username)
+            raises (Common::AdminPrivilegeRequiredException);
+            
+        void updateUser(
+            in string adminToken,
+            in string username,
+            in Common::PlayerStats newStats
+        ) raises (Common::AdminPrivilegeRequiredException);
+        
+        // Game configuration
+        void updateGameSettings(
+            in string adminToken,
+            in Common::GameSettings newSettings
+        ) raises (Common::AdminPrivilegeRequiredException);
+        
+        // Monitoring
+        Common::StringList getAllActiveGames(in string adminToken)
+            raises (Common::AdminPrivilegeRequiredException);
+            
+        Common::RoundResults getGameResults(in string adminToken, in string gameId)
+            raises (Common::AdminPrivilegeRequiredException);
+    };
+};

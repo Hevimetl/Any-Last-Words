@@ -1,0 +1,96 @@
+// Common.idl
+module CommonTypes {
+typedef sequence<string> StringList;
+      enum UserRole {
+        ADMIN,
+        PLAYER
+      };
+
+     struct AuthResult {
+     string     token;
+     string userName;
+    UserRole   role;
+    long long expirationTime;
+    };
+
+  struct Settings {
+        long waitingTime;
+        long roundTime;
+    };
+
+     struct PlayerGameState {
+            long remainingAttempts;
+            StringList guessedLetters;
+            boolean hasGuessedWord;
+            long score;
+        };
+
+
+    typedef sequence<PlayerGameState> PlayerList;
+    struct Game {
+        boolean gameState;
+        string gameId;
+        string currentWord;
+        Settings gameSettings;
+        PlayerList players;
+    };
+
+
+
+
+
+    // —— Exceptions ——
+    exception AuthenticationException {
+        string errorMessage;
+    };
+
+    exception UserDoesNotExistException {
+        string errorMessage;
+    };
+
+    exception InvalidCredentialsException {
+        string errorMessage;
+    };
+
+    exception UserAlreadyLoggedInException {
+        string errorMessage;
+    };
+
+    exception NoPlayersFoundException {
+        string errorMessage;
+    };
+
+    exception InvalidGuessException {
+        string errorMessage;
+    };
+
+    exception LetterAlreadyGuessedException {
+        string errorMessage;
+    };
+
+    exception GuessLimitReachedException {
+        string errorMessage;
+    };
+
+    exception GameNotFoundException {
+        string errorMessage;
+    };
+
+    exception UserAlreadyExistsException {
+        string errorMessage;
+    };
+
+    exception InvalidSessionException{
+    string errorMessage;
+    };
+
+    interface Login {
+                AuthResult authenticate(in string userName, in string password) raises (
+                        InvalidCredentialsException,
+                        UserDoesNotExistException
+                    );
+                void logoutAccount(in string token);
+                boolean isLoggedIn(in string token);
+            };
+
+};

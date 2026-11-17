@@ -1,0 +1,41 @@
+// PlayerService.idl
+#include "Common.idl"
+
+module PlayerService {
+    interface PlayerGameService {
+        // Game lifecycle
+        string createGame(in string token)
+            raises (
+                Common::AuthenticationException,
+                Common::InvalidGuessException
+
+            );
+
+        void joinGame(in string token, in string gameId, in Common::GameClientCallback callback)
+            raises (
+                Common::GameFullException,
+                Common::GameNotFoundException,
+                Common::WaitingTimeExpiredException
+            );
+
+        // Game actions
+        void submitGuess(in string token, in string gameId, in char letter)
+            raises (
+                Common::InvalidGuessException,
+                Common::LetterAlreadyGuessedException,
+                Common::GuessLimitReachedException,
+                Common::RoundTimeoutException
+            );
+
+        void leaveGame(in string token, in string gameId)
+            raises (Common::GameNotFoundException);
+
+        // Game status
+        Common::PlayerStats getPlayerStats(in string token)
+            raises (Common::AuthenticationException);
+
+        Common::Leaderboard getLeaderboard(in long count);
+
+
+    };
+};

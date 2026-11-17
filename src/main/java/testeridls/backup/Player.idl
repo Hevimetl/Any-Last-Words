@@ -1,0 +1,56 @@
+#include "Common.idl"
+
+module PlayerService {
+    // Denied when you try to start/join without permission
+    exception GameRequestDenied {
+        string reason;
+    };
+
+    // Core Hangman player interface
+    interface Player {
+        // Join / cancel / lifecycle
+        string joinGame(in string token, in string gameId) raises (CommonTypes::NoPlayersFoundException);
+        boolean cancelGameRequest(in string token, in string gameId);
+        void createGame(in string token) raises (CommonTypes::InvalidSessionException);
+        //boolean isGameReady(in string token, in string gameId);
+
+        // Reconnection
+        boolean rejoinGame(in string token, in string gameId) raises (CommonTypes::GameNotFoundException);
+
+        // Status checks
+        boolean isGameOver(in string token, in string gameId);
+        boolean isRoundWinner(in string token, in string gameId);
+        boolean isGameWinner(in string token, in string gameId);
+
+        // Progress & results
+        string getWordProgress(in string token, in string gameId);
+        string getFullWord(in string token, in string gameId);
+        string getRoundWinner(in string token, in string gameId);
+
+        // Guessing
+        string sendGuess(in string token, in string gameId, in char guess)
+            raises(
+                CommonTypes::InvalidGuessException,
+                CommonTypes::LetterAlreadyGuessedException,
+                CommonTypes::GuessLimitReachedException
+            );
+
+        // Attempts info
+        long getRemainingAttempts(in string token, in string gameId);
+        long getWrongGuessCount(in string token, in string gameId);
+
+        // Helpers
+        long getWordLength(in string token, in string gameId);
+        //CommonTypes::SessionPlayers getPlayersInGame(in string token, in string gameId);
+
+        //Leaderboard
+        CommonTypes::StringList getTopPlayers(in long count);
+    };
+
+   /* // Global leaderboard
+    interface LeaderboardService {
+        CommonTypes::topUsers getTopPlayers();
+    };
+    */
+
+};
